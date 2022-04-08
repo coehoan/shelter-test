@@ -15,7 +15,7 @@ import site.metacoding.animalprojectbackend.service.api.SigunguService;
 public class SigunguController {
 
     private final SigunguService sigunguService;
-    
+
     @GetMapping("/sigungu/busan")
     public String download(SigunguDto sigunguDto, Model model) {
 
@@ -28,7 +28,7 @@ public class SigunguController {
 
     @GetMapping("/sigungu/deagu")
     public String deagu(SigunguDto sigunguDto, Model model) {
-        
+
         List<SigunguDto> sigunguEntity = sigunguService.대구다운로드(sigunguDto);
 
         model.addAttribute("deagulist", sigunguEntity);
@@ -38,7 +38,7 @@ public class SigunguController {
 
     @GetMapping("/sigungu/incheon")
     public String incheon(SigunguDto sigunguDto, Model model) {
-        
+
         List<SigunguDto> sigunguEntity = sigunguService.인천다운로드(sigunguDto);
 
         model.addAttribute("incheonlist", sigunguEntity);
@@ -155,5 +155,5 @@ public class SigunguController {
 
         return "/api/sigunguDownload";
     }
-    
+
 }
